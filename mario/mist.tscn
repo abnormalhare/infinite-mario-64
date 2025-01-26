@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8g33tci0h0ep"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h086i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tntid"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_h086i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
+transform = Transform3D(2.73887, 0, 0, 0, 2.73887, 0, 0, 0, 2.73887, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_tntid")

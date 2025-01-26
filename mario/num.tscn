@@ -1,0 +1,57 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3o8afhqhrt0n"]
+
+[ext_resource type="Texture2D" uid="uid://da53lyuoe2abx" path="res://mario/rc_0.png" id="1_s5xxk"]
+[ext_resource type="Texture2D" uid="uid://bh01ro2eghwcj" path="res://mario/rc_1.png" id="2_7ydey"]
+[ext_resource type="Texture2D" uid="uid://dotshta4hnxi5" path="res://mario/rc_2.png" id="3_0ywgh"]
+[ext_resource type="Texture2D" uid="uid://brrwdu7tigtdn" path="res://mario/rc_3.png" id="4_vfmhm"]
+[ext_resource type="Texture2D" uid="uid://dawb1wtyg050m" path="res://mario/rc_4.png" id="5_foywi"]
+[ext_resource type="Texture2D" uid="uid://cpmx813s48420" path="res://mario/rc_5.png" id="6_mjea7"]
+[ext_resource type="Texture2D" uid="uid://cx7ybwjcf5tny" path="res://mario/rc_6.png" id="7_dtwbr"]
+[ext_resource type="Texture2D" uid="uid://cgaqo3n203525" path="res://mario/rc_7.png" id="8_oaed1"]
+[ext_resource type="Texture2D" uid="uid://uskyvj2f7nxu" path="res://mario/rc_8.png" id="9_h8sq5"]
+[ext_resource type="Texture2D" uid="uid://dwqoef24s4i4l" path="res://mario/rc_9.png" id="10_7b5db"]
+[ext_resource type="Script" path="res://mario/num.gd" id="11_p3phn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eywe8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_s5xxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7ydey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ywgh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vfmhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_foywi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mjea7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dtwbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oaed1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h8sq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7b5db")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D"]
+transform = Transform3D(6.24982, 0, 0, 0, 6.24982, 0, 0, 0, 6.24982, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_eywe8")
+script = ExtResource("11_p3phn")
