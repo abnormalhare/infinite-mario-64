@@ -419,7 +419,7 @@ var preview_cam_pan_yaw : float = 0
 @onready var spawn_cast := $SpawnCast as ShapeCast3D
 var start_time := 0.0
 
-func _respawn_mario() -> void:
+func _respawn_mario(resp_sound) -> void:
 	for block:LevelBlock in SOGlobal.level_meshes:
 		block._reset_block()
 	await get_tree().create_timer(0.05).timeout
@@ -464,7 +464,7 @@ func _respawn_mario() -> void:
 		checkpoint_flag.queue_free()
 	checkpoint_pos = position
 	checkpoint_facing = face_angle
-	SOGlobal.play_sound(preload("res://mario/enter_painting.WAV"))
+	SOGlobal.play_sound(resp_sound)
 	#for child in SOGlobal.get_children():
 		#if child is PowerStar:
 			#child._respawn()
@@ -596,7 +596,7 @@ func _tick(delta: float) -> void:
 			_restore_mario_to_checkpoint()
 		else: if !needs_respawning:
 			needs_respawning = true
-			_respawn_mario()
+			_respawn_mario(preload("res://mario/enter_painting.WAV"))
 	
 	if _action == SM64MarioAction.STAR_DANCE_EXIT and !_paused and ready_to_play:
 		if !hide_hud:
@@ -673,10 +673,9 @@ func _tick(delta: float) -> void:
 	var time_minus_start = Time.get_ticks_msec() - SOGlobal.level_start_time
 	if !ready_to_play:
 		if Input.is_action_just_pressed("mario_a"):
-			SOGlobal.play_sound(preload("res://mario/enter_painting.WAV"))
 			ready_to_play = true
 			start_time = Time.get_ticks_msec()
-			_respawn_mario()
+			_respawn_mario(preload("res://mario/enter_painting.WAV"))
 		preview_cam_pitch += Input.get_axis(stick_up, stick_down) * delta * 90
 		preview_cam_yaw += Input.get_axis(stick_left, stick_right) * delta * 90
 		preview_cam_pan_pitch += camera_input.y * delta * -360

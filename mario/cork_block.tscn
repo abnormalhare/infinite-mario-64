@@ -55,12 +55,13 @@ mesh = SubResource("ArrayMesh_mg5gs")
 skeleton = NodePath("")
 
 [node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.1757, 0, 0, 0, 1, 0, 0, 0)
 collision_layer = 2
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(0.617671, 0, 0, 0, 0.617671, 0, 0, 0, 0.617671, -0.027984, 0.0107593, -0.0125594)
+transform = Transform3D(0.617671, 0, 0, 0, 0.617671, 0, 0, 0, 0.617671, 0.0905351, -0.252858, -0.0125594)
 shape = SubResource("BoxShape3D_1prgb")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="."]

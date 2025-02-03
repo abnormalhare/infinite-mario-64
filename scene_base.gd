@@ -546,6 +546,7 @@ func _create_mario_world(useSeed = str(randi())) -> void:
 	SOGlobal.total_coins = 0
 	SOGlobal.total_red_coins = 0
 	sm_64_mario.current_red_coin_count = 0
+	sm_64_mario.current_coin_count = 0
 	
 	if SM64Global.is_init():
 		for mesh in SOGlobal.level_meshes:
@@ -678,6 +679,9 @@ func _create_mario_world(useSeed = str(randi())) -> void:
 	await sky_noise_texture.changed
 	SOGlobal.sky_material.set_shader_parameter("sky_texture", sky_noise_texture)
 	world_environment.environment.fog_density = sky_random.randf_range(0.0005, 0.01)
+
+func reset_coin_count():
+	sm_64_mario.current_coin_count = 0
 
 func reset_red_coin_count():
 	sm_64_mario.current_red_coin_count = 0

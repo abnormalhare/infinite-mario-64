@@ -65,8 +65,7 @@ func call_selection_function(desired_button : int) -> void:
 		0: # resume
 			_unpause()
 		1: # retry
-			SOGlobal.current_mario._respawn_mario()
-			SOGlobal.play_sound(preload("res://mario/enter_painting.WAV"))
+			SOGlobal.current_mario._respawn_mario(preload("res://mario/enter_painting.WAV"))
 			for child in SOGlobal.get_children():
 				if child is PowerStar:
 					child._respawn()
